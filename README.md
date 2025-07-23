@@ -1,6 +1,6 @@
 # 🌫️ AirScanAI: Air Quality Analysis & Prediction for Indian Cities
 
-**AirScanAI** is an end-to-end data science project that analyzes daily air quality metrics across major Indian cities and builds predictive models to understand air pollution patterns. From cleaning raw data to visualizing trends and developing machine learning models, this project delivers an insightful look into the urban airscape of India.
+**AirScanAI** is a full-stack data science project designed to analyze and predict air quality trends across major Indian cities. Leveraging a rich dataset of pollutants and environmental metrics, the project cleans, visualizes, and models air pollution behavior using both local and cloud-based tools.
 
 ---
 
@@ -15,16 +15,16 @@ AirScanAI/
 │   └── Filled_data.csv
 │
 ├── code/
-│   ├── AIT614_Sec005_Team8_Databricks1
-│   ├── AIT614_Sec005_Team8_JupyterNotebook
-│   ├── AIT614_Sec005_Team8_EDA
-│   └── AIT614_Sec005_Team8_MLModels
+│   ├── DataCleaning_Databricks.ipynb
+│   ├── DataFilling_LocalNotebook.ipynb
+│   ├── EDA_AirQualityAnalysis.ipynb
+│   └── MLModeling_AQI_Prediction.ipynb
 │
 ├── HTML/
-    ├── AIT614_Sec005_Team8_Databricks1_HTML
-    ├── AIT614_Sec005_Team8_JupyterNotebook_HTML
-    ├── AIT614_Sec005_Team8_EDA_HTML
-    └── AIT614_Sec005_Team8_MLModels_HTML
+    ├── DataCleaning_Databricks.html
+    ├── DataFilling_LocalNotebook.html
+    ├── EDA_AirQualityAnalysis.html
+    └── MLModeling_AQI_Prediction.html
 ```
 
 ---
@@ -33,18 +33,18 @@ AirScanAI/
 
 - **Records**: 29,531  
 - **Features**: 16  
-- **Location**: Various Indian cities  
-- **Focus Pollutants**: PM2.5, PM10, NOx  
-- **Goal**: Compute and study AQI (Air Quality Index) and AQI Buckets.
+- **Location**: Multiple Indian cities  
+- **Core Pollutants**: PM2.5, PM10, NOx  
+- **Purpose**: Calculate AQI and classify air quality levels across regions and time
 
 ---
 
 ## ⚙️ Requirements
 
 - Python 3.x
-- Databricks (for Spark-based workflows)
+- Databricks (for distributed computing)
 - Jupyter Notebook (preferred for local use)
-- Libraries:
+- Required Libraries:
   - `pandas`
   - `numpy`
   - `matplotlib`
@@ -56,68 +56,79 @@ AirScanAI/
 
 ## 🚀 How to Run the Project
 
-### 1️⃣ Data Cleaning: `AIT614_Sec005_Team8_Databricks1`
+### 1️⃣ Data Cleaning (Databricks)
 
-- Launch a cluster on **Databricks**.
-- Upload the notebook and `city_day.csv` to DBFS.
-- Replace the dataframe `df1` with your loaded data.
-- Run the notebook to generate a **cleaned dataset**.
+**File**: `01_DataCleaning_Databricks.ipynb`
 
-### 2️⃣ Data Filling: `AIT614_Sec005_Team8_JupyterNotebook`
+- Create a Databricks cluster
+- Upload `city_day.csv` to DBFS
+- Load and run the notebook
+- Output: `data_cleaned.csv`
 
-- Use **Jupyter Notebook** or another IDE.
-- Load the notebook and `data_cleaned.csv`.
-- Replace file paths appropriately.
-- Execute all cells to create the **filled dataset**.
+---
 
-### 3️⃣ Exploratory Data Analysis: `AIT614_Sec005_Team8_EDA`
+### 2️⃣ Data Filling (Local Notebook)
 
-- Use a local Python IDE (Jupyter preferred).
-- Load the notebook and `Filled_data.csv`.
-- Replace file paths.
-- Run cells to generate **visualizations** and insights.
+**File**: `02_DataFilling_LocalNotebook.ipynb`
 
-### 4️⃣ Machine Learning Models: `AIT614_Sec005_Team8_MLModels`
+- Use Jupyter Notebook or other IDEs (e.g., VS Code)
+- Load the notebook and `data_cleaned.csv`
+- Replace the file path in the code
+- Output: `Filled_data.csv`
 
-- Run in **Databricks** with a cluster.
-- Upload notebook and `Filled_data.csv` to DBFS.
-- Replace dataframe `df1` and run the notebook.
-- View **model results** and performance metrics.
+---
+
+### 3️⃣ Exploratory Data Analysis (EDA)
+
+**File**: `03_EDA_AirQualityAnalysis.ipynb`
+
+- Run in Jupyter or any Python IDE
+- Use `Filled_data.csv` as input
+- Outputs: Visualizations and insights on air pollution distribution
+
+---
+
+### 4️⃣ Machine Learning Modeling
+
+**File**: `04_MLModeling_AQI_Prediction.ipynb`
+
+- Use Databricks for running the notebook
+- Upload `Filled_data.csv` to DBFS
+- Run the notebook to train and evaluate ML models
+- Output: Model performance metrics and predictions
 
 ---
 
 ## 🌐 HTML Outputs
 
-All Jupyter and Databricks notebooks have corresponding `.html` exports in the `HTML/` folder for easy preview of outputs without running the code.
+Each notebook has a corresponding `.html` version available in the `HTML/` folder for quick viewing of outputs and results.
 
 ---
 
 ## 🧠 Authors & Credits
 
-Project by **AIT614 - Sec005 - Team 8**  
-Data sourced from Indian air quality datasets  
-Visualization and modeling done using Pandas, Seaborn, Sklearn, and Spark.
+Created by **AIT614 - Sec005 - Team 8**  
+This project uses open air quality datasets and applies various data science techniques for environmental analysis and modeling.
 
 ---
 
 ## 📌 Future Enhancements
 
-- 📍 Geospatial AQI visualization (heatmaps)
-- 📈 Time-series forecasting for air quality trends
-- 🤖 Deployment of prediction models via a web app
+- 🌍 Geospatial AQI heatmaps
+- ⏳ Time-series forecasting of pollutant levels
+- 🌐 Deployment of ML model via Flask or Streamlit
 
 ---
 
 ## ⭐️ Show Your Support
 
-If you find this repo helpful:
+If this project adds value:
 
-- ⭐ Star this repository
-- 🍴 Fork it
-- 🛠️ Use it for your own AQI projects
-- 📬 Share feedback or improvements
+- ⭐ Star the repo  
+- 🍴 Fork it  
+- 🛠️ Contribute improvements  
+- 🗣️ Share your thoughts  
 
 ---
 
-> _“Breathe easy, code cleaner, and let the data tell the story.”_
-
+> _“Breathe cleaner. Code smarter. Let the air tell its story.”_
